@@ -1,0 +1,54 @@
+% chapter Example
+%------------------------------------------------
+\chapter{Example}
+
+%------------------------------------------------
+\section{Acronym}
+Example Acronym of \ac{WWW}.
+
+%------------------------------------------------
+\section{Citation}
+
+Example citation \cite{paper:shannon1949communication}.
+
+%------------------------------------------------
+\section{Figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{latex-featured}
+  \caption{Example Figure.}
+  \label{fig:examplefigure}
+\end{figure}
+
+%------------------------------------------------
+\section{Table}
+
+\begin{table}
+	\centering
+	\setstretch{1.5}
+	\caption{Example Table.}
+	\label{tab:exampletable}
+	\begin{tabular}{ccc}
+		\toprule
+		Name & Age & Location \\ \midrule
+    John & 24 & DE \\
+    Gabriela & 22 & MY \\
+    Michael & 21 & US \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+%------------------------------------------------
+\section{Equation}
+
+Example Equation.
+\begin{equation}
+	\int_{a}^{b} f(x) \, dx\ \approx \frac{b - a}{2} \cdot [f(a) + f(b)]
+	\label{eq:exampleequation}
+\end{equation}
+
+%------------------------------------------------
+\section{Label}
+
+Example label reffering to \autoref{fig:examplefigure}, \autoref{tab:exampletable}, and \autoref{eq:exampleequation}.
+
