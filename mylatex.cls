@@ -56,6 +56,7 @@
 % Header
 \clearpairofpagestyles
 \ihead{\headmark} %% Chapter name in header
+\ohead{\includegraphics[height=\headheight]{latex-featured}}
 
 % Font
 \setkomafont{pageheadfoot}{\normalsize\scshape}
