@@ -41,6 +41,7 @@ $(PROJNAME).pdf: $(PROJNAME).tex
 
 cleanall:
 	latexmk -C
+	find . -type f \( -iname \*.aux -o -iname \*.bbl -o -iname \*.xml \) -delete
 
 clean:
 	latexmk -c
