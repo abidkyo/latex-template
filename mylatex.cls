@@ -120,6 +120,7 @@
 %-----------------------------------------------
 
 \RequirePackage{textcomp} % For extra symbols
+\RequirePackage[separate-uncertainty,list-units=single,range-units=single]{siunitx}
 \RequirePackage{gensymb}
 \RequirePackage{latexsym}
 \RequirePackage{amsmath}  % Numbering of equation

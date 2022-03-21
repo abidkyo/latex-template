@@ -66,3 +66,22 @@ Another example math equation inline (within paragraph) \( \int_{0}^{10} x^2 \) 
 
 Example of math equation outside the paragraph \[ \int_{0}^{10} x^2 \] with some text at the end.
 
+%------------------------------------------------
+\section{Quantity: Number and Unit}
+% siunitx package
+
+Example of quantity \qty{10}{\kg\m\per\s\squared}.
+
+Example of quantity list \qtylist{10;20;30}{\uA}.
+
+Example of quantity range \qtyrange{10}{20}{\GHz}.
+
+Example of quantity product \qtyproduct{10x20x30}{\cm}
+
+Example of angle \ang{10.5} and \ang{10;30}.
+
+% Number must have equal amount of decimal places.
+Example of uncertainty \qty{100.0(10.5)}{\nF} or \qty[separate-uncertainty-units = repeat]{200.00(20.55)}{\MW}.
+
+Example of plus-minus sign \qty{\pm 0.5}{\ohm}.
+
