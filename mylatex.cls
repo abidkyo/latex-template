@@ -3,7 +3,7 @@
 \ProvidesClass{mylatex}[Custom Document Class]
 
 % Load base
-\LoadClass[a4paper,fontsize=12pt,oneside,openany,DIV=calc,BCOR=10mm,titlepage,numbers=noenddot,parskip=half,listof=totoc,bibliography=totoc]{scrbook}
+\LoadClass[a4paper,fontsize=12pt,oneside,openany,titlepage,numbers=noenddot,parskip=half,listof=totoc,bibliography=totoc]{scrbook}
 
 
 %----------------------------------------
