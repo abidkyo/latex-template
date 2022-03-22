@@ -14,7 +14,7 @@
 \setlength{\textwidth}{14.9cm}
 \setlength{\textheight}{21cm}
 \setlength{\parindent}{0cm}
-\setlength{\headheight}{1cm}
+\setlength{\headheight}{1.5cm}
 \setlength{\headsep}{1cm}
 \setlength{\topmargin}{-1cm}
 \RequirePackage{setspace}  % Spacing
@@ -56,7 +56,7 @@
 % Header
 \clearpairofpagestyles
 \ihead{\headmark} %% Chapter name in header
-\ohead{\includegraphics[height=\headheight]{latex-featured}}
+\ohead{\includegraphics[height=36pt]{latex-featured}}
 
 % Font
 \setkomafont{pageheadfoot}{\normalsize\scshape}
