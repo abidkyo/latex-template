@@ -8,17 +8,17 @@
 \usepackage[section]{placeins}
 \makeatletter
 \AtBeginDocument{%
-	\expandafter\renewcommand\expandafter\subsection\expandafter{%
-		\expandafter\@fb@secFB\subsection
-	}%
+  \expandafter\renewcommand\expandafter\subsection\expandafter{%
+    \expandafter\@fb@secFB\subsection
+  }%
 }
 \makeatother
 %
 \makeatletter
 \AtBeginDocument{%
-	\expandafter\renewcommand\expandafter\subsubsection\expandafter{%
-		\expandafter\@fb@secFB\subsubsection
-	}%
+  \expandafter\renewcommand\expandafter\subsubsection\expandafter{%
+    \expandafter\@fb@secFB\subsubsection
+  }%
 }
 \makeatother
 
@@ -30,55 +30,55 @@
 %------------------------------------------------
 
 %\includeonly{
-%	include/content,
-%	chapter/ch1,
-%	chapter/ch2,
-%	chapter/ch3,
-%	chapter/ch4,
-%	chapter/ch5,
-%	chapter/ch6,
-%	include/appendix,
-%	include/abbreviation,
+%  include/content,
+%  chapter/ch1,
+%  chapter/ch2,
+%  chapter/ch3,
+%  chapter/ch4,
+%  chapter/ch5,
+%  chapter/ch6,
+%  include/appendix,
+%  include/abbreviation,
 %}
 
 %------------------------------------------------
 \begin{document}
-	\pagenumbering{alph}
-	\setcounter{page}{1}
+  \pagenumbering{alph}
+  \setcounter{page}{1}
 
-	\include{include/cover}
-	\include{include/title}
+  \include{include/cover}
+  \include{include/title}
 
-	%------------------------------------------------
-	\pagenumbering{roman}
-	\setcounter{page}{1}
+  %------------------------------------------------
+  \pagenumbering{roman}
+  \setcounter{page}{1}
 
-	\include{include/acknowledgement}
-	\include{include/abstract}
-	\include{include/content}
+  \include{include/acknowledgement}
+  \include{include/abstract}
+  \include{include/content}
 
-	%------------------------------------------------
-	\pagenumbering{arabic}
-	\setcounter{page}{1}
+  %------------------------------------------------
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
 
-	\include{chapter/ch1}
-	\include{chapter/ch2}
-	\include{chapter/ch3}
-	\include{chapter/ch4}
-	\include{chapter/ch5}
-	\include{chapter/ch6}
+  \include{chapter/ch1}
+  \include{chapter/ch2}
+  \include{chapter/ch3}
+  \include{chapter/ch4}
+  \include{chapter/ch5}
+  \include{chapter/ch6}
   \include{chapter/example}
 
-	%------------------------------------------------
-	\appendix
-	% Figure number starting from A in appendix
-	\renewcommand{\thefigure}{A\arabic{figure}}
-	\pagenumbering{Roman}
+  %------------------------------------------------
+  \appendix
+  % Figure number starting from A in appendix
+  \renewcommand{\thefigure}{A\arabic{figure}}
+  \pagenumbering{Roman}
 
-	\include{include/appendix}
-	\include{include/abbreviation}
+  \include{include/appendix}
+  \include{include/abbreviation}
 
-	\stepcounter{chapter}  % needed
-	\printbibliography[title = References]
+  \stepcounter{chapter}  % needed
+  \printbibliography[title = References]
 
 \end{document}
