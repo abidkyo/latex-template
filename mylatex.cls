@@ -129,6 +129,7 @@
 \RequirePackage[right]{eurosym}  % Eur symbol \EUR{number}, or Number \euro{}
 \RequirePackage{graphicx}
 \graphicspath{ {./images/} }
+\RequirePackage{rotating}
 \RequirePackage{float}
 \RequirePackage{floatflt}
 \RequirePackage{multirow}
