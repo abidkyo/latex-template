@@ -125,6 +125,8 @@
 \RequirePackage{latexsym}
 \RequirePackage{amsmath}  % Numbering of equation
 % \RequirePackage{amssymb}  % Equation
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode} % Algorithm
 \RequirePackage{upgreek}  % Upright Greek symbol in equation
 \RequirePackage[right]{eurosym}  % Eur symbol \EUR{number}, or Number \euro{}
 \RequirePackage{graphicx}
@@ -150,6 +152,7 @@
 \numberwithin{figure}{chapter}  % For figures
 \numberwithin{table}{chapter}  % For tables
 \numberwithin{equation}{section}   % For equation, depends on sections
+\numberwithin{algorithm}{section} % For algorithm, depends on sections
 
 
 %-------------------------------------------
@@ -161,6 +164,7 @@
 \captionsetup{format=hang,justification=raggedright}
 \captionsetup{font=small,labelfont=bf}
 \captionsetup[table]{belowskip=10pt}  % Spacing between caption and table
+\newcommand{\algorithmautorefname}{Algorithm} % default is just number
 
 
 %-------------------------------------------
