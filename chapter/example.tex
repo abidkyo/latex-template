@@ -68,10 +68,42 @@ Example Algorithm.
 \end{algorithm}
 
 %------------------------------------------------
+
+\pagebreak
+
+\section{Listing}
+
+Example Listing.
+
+The \texttt{lstlisting} is not a float,
+so error is issued when it cross page boundary.
+
+Workaround is either using \texttt{pagebreak} or
+set the \texttt{float} flag but the placement is not suitable for a listing.
+
+\begin{lstlisting}[language=Python, caption=Example Listing, label={lst:examplelisting}]
+import math
+
+def isPrime(x):
+    # dont worry about x < 2
+    if x == 2:
+        return True
+
+    if x % 2 == 0:
+        return False
+
+    for i in range(3, int(math.sqrt(x)), 2):
+        if x % i == 0:
+            return False
+
+    return True
+\end{lstlisting}
+
+%------------------------------------------------
 \section{Label}
 
 Example label referring to \autoref{fig:examplefigure}, \autoref{tab:exampletable},
-\autoref{alg:examplealgorithm} and \autoref{eq:exampleequation}.
+\autoref{alg:examplealgorithm}, \autoref{lst:examplelisting} and \autoref{eq:exampleequation}.
 
 %------------------------------------------------
 \section{Acronym}

@@ -125,6 +125,8 @@
 \RequirePackage{latexsym}
 \RequirePackage{amsmath}  % Numbering of equation
 % \RequirePackage{amssymb}  % Equation
+\RequirePackage{listings} % Code block
+\lstset{frame=tb, aboveskip=\baselineskip, basicstyle=\scriptsize\ttfamily, captionpos=b, name=lstlisting}
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocode} % Algorithm
 \RequirePackage{upgreek}  % Upright Greek symbol in equation
