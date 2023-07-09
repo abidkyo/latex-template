@@ -1,13 +1,13 @@
+%----------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{mylatex}[Custom Document Class]
 
-% Load base
 \LoadClass[a4paper,fontsize=12pt,oneside,openany,titlepage,numbers=noenddot,parskip=half,listof=totoc,bibliography=numbered]{scrbook}
 
 
 %----------------------------------------
-%	Page Settings
+%	Page Layout
 %-----------------------------------------
 
 \RequirePackage{geometry}
@@ -17,36 +17,45 @@
 \setlength{\headheight}{1.5cm}
 \setlength{\headsep}{1cm}
 \setlength{\topmargin}{-1cm}
+
+%-------------------------------------------
+% Spacing
+%-------------------------------------------
+
 \RequirePackage{setspace}  % Spacing
 \onehalfspacing
+
+%	Space before/after section/subsection
+\RedeclareSectionCommand[
+	beforeskip=1\baselineskip,
+	afterskip=0.5\baselineskip]{section}
+
+\RedeclareSectionCommand[
+	beforeskip=0.75\baselineskip,
+	afterskip=0.5\baselineskip]{subsection}
 
 
 %-------------------------------------
 %	Language, Font, Encoding
 %-------------------------------------
 
+\RequirePackage[english]{babel}  % Language setting
+
 \addtokomafont{disposition}{\rmfamily}  % Change headings font
 \RequirePackage{lmodern}  % Latin modern font
-\RequirePackage[T1]{fontenc}  % 8-bit font (e.g for Umlaut)
 \RequirePackage{newtxtext, newtxmath}  % Times font for text and math
-\RequirePackage[english]{babel}  % English spellchecker
+
+\RequirePackage[T1]{fontenc}  % 8-bit font (e.g for Umlaut)
 \RequirePackage[utf8]{inputenc}
 %\RequirePackage[applemac]{inputenc}  % For Apple User (instead of utf8)
-\RequirePackage{csquotes}  % Quote symbol depends on babel language setting
 \RequirePackage{ifthen}  % Command
 
+\RequirePackage{csquotes}  % Quote symbol depends on babel language setting
+
 
 %------------------------------------------------
-%	Header and Footer Setting
+%	Header and Footer
 %------------------------------------------------
-
-% Sizing
-\newcommand\headrule{
-\vspace{-1cm}
-\begin{minipage}{1\textwidth}
-\hrule width \hsize \kern 2mm
-\end{minipage}
-}
 
 % Style
 \RequirePackage[headsepline]{scrlayer-scrpage}
@@ -58,19 +67,23 @@
 \ihead{\headmark} %% Chapter name in header
 \ohead{\includegraphics[height=36pt]{latex-featured}}
 
-% Font
+% Header Font
 \setkomafont{pageheadfoot}{\normalsize\scshape}
 
 % Page Number in Footer
 \cfoot[\pagemark]{\pagemark}
 
+% Footnote numbering
+\renewcommand{\thefootnote}{[\arabic{footnote}]}
+
 
 %------------------------------------------------
-%	Page Layout
+%	Chapter Name
 %------------------------------------------------
 
 % 2 lines wrapping the chapter name
-\makeatletter  % Command with @ needs to start with makeatletter and end with makeatother
+% Command with @ needs to start with makeatletter and end with makeatother
+\makeatletter
 \def\@makeschapterhead#1{  % Command for non-chapter page
   \vspace*{-110pt}  % Remove space at chapter head
   { \parindent 0pt \raggedright\vspace*{10pt}
@@ -93,63 +106,11 @@
 \makeatother
 
 
-%-------------------------------------------
-%	Space before/after section/subsection
-%-------------------------------------------
-
-\RedeclareSectionCommand[
-	beforeskip=1\baselineskip,
-	afterskip=0.5\baselineskip]{section}
-
-\RedeclareSectionCommand[
-	beforeskip=0.75\baselineskip,
-	afterskip=0.5\baselineskip]{subsection}
-
-
-%-------------------------------------------
-%	List and Numbering Setting
-%-------------------------------------------
-
-\setcounter{secnumdepth}{3}  % Numbering for 3 level (until subsubsection)
-\setcounter{tocdepth}{2}  % 2 level in contents page (until subsection)
-\RequirePackage[printonlyused]{acronym}  % For Acronym list
-
-
 %-----------------------------------------------
-%	Symbols, Graphics, Equation
+% Float Barrier
 %-----------------------------------------------
 
-\RequirePackage{textcomp} % For extra symbols
-\RequirePackage[separate-uncertainty,list-units=single,range-units=single]{siunitx}
-\RequirePackage{gensymb}
-\RequirePackage{latexsym}
-\RequirePackage{amsmath}  % Numbering of equation
-% \RequirePackage{amssymb}  % Equation
-\RequirePackage{listings} % Code block
-\lstset{frame=tb, aboveskip=\baselineskip, basicstyle=\scriptsize\ttfamily, captionpos=b, name=lstlisting}
-\RequirePackage{algorithm}
-\RequirePackage{algpseudocode} % Algorithm
-\RequirePackage{upgreek}  % Upright Greek symbol in equation
-\RequirePackage[right]{eurosym}  % Eur symbol \EUR{number}, or Number \euro{}
-\RequirePackage{graphicx}
-\graphicspath{ {./images/} }
-\RequirePackage{rotating}
-\RequirePackage{float}
-\RequirePackage{floatflt}
-\RequirePackage{multirow}
-\RequirePackage[usenames,dvipsnames]{xcolor}
-\RequirePackage{mathtools}  % load amsmath
-\RequirePackage{booktabs}  % For Tables
-\RequirePackage{pdfpages} % Include pdf
-\definecolor{color0}{rgb}{0,0,0}  % Black
-\definecolor{color1}{rgb}{0.22,0.45,0.70}  % Light blue
-\definecolor{color2}{rgb}{0.45,0.45,0.45}  % Dark grey
-
-
-%-----------------------------------------------
 % Do not let floats pass section, subsection and subsubsection borders
-%-----------------------------------------------
-
 \RequirePackage[section]{placeins}
 \makeatletter
 \AtBeginDocument{%
@@ -168,27 +129,78 @@
 \makeatother
 
 
-%----------------------------------------------------
-%	Chapter Number in Captions
-%----------------------------------------------------
+%-----------------------------------------------
+%	Packages
+%-----------------------------------------------
 
-\RequirePackage{subfigure}
-\numberwithin{figure}{chapter}  % For figures
-\numberwithin{table}{chapter}  % For tables
-\numberwithin{equation}{section}   % For equation, depends on sections
-\numberwithin{algorithm}{section} % For algorithm, depends on sections
+\RequirePackage{gensymb}
+\RequirePackage{latexsym}
+\RequirePackage{textcomp} % For extra symbols
+\RequirePackage{upgreek}  % Upright Greek symbol in equation
+\RequirePackage[right]{eurosym}  % Eur symbol \EUR{number}, or Number \euro{}
+
+% Floats
+\RequirePackage{float}
+\RequirePackage{floatflt}
+
+% Figures
+\RequirePackage{graphicx}
+\graphicspath{ {./images/} }
+\RequirePackage{rotating}
+
+% Tables
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+
+% Acronyms
+\RequirePackage[printonlyused]{acronym}
+
+% SI units
+\RequirePackage[separate-uncertainty,list-units=single,range-units=single]{siunitx}
+
+% Maths
+\RequirePackage{amsmath}
+\RequirePackage{mathtools}
+
+% Algorithm
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\RequirePackage{listings} % Code block
+\lstset{frame=tb, aboveskip=\baselineskip, basicstyle=\scriptsize\ttfamily, captionpos=b, name=lstlisting}
+
+% Colors
+\RequirePackage[usenames,dvipsnames]{xcolor}
+
+% PDF
+\RequirePackage{pdfpages} % Include pdf
 
 
 %-------------------------------------------
-%	Figure, Table Captions
+%	Chapter/Section Numbering
+%-------------------------------------------
+
+\setcounter{tocdepth}{2}  % 2 level in contents page (until subsection)
+\setcounter{secnumdepth}{3}  % Numbering for 3 level (until subsubsection)
+
+
+%-------------------------------------------
+%	Captions
 %-------------------------------------------
 
 \RequirePackage{ragged2e}
 \RequirePackage{caption}
+\RequirePackage{subcaption}
 \captionsetup{format=hang,justification=raggedright}
 \captionsetup{font=small,labelfont=bf}
 \captionsetup[table]{belowskip=10pt}  % Spacing between caption and table
+
 \newcommand{\algorithmautorefname}{Algorithm} % default is just number
+
+%	number in captions
+\numberwithin{figure}{chapter}  % For figures
+\numberwithin{table}{chapter}  % For tables
+\numberwithin{equation}{section}   % For equation, depends on sections
+\numberwithin{algorithm}{section} % For algorithm, depends on sections
 
 
 %-------------------------------------------
@@ -197,7 +209,7 @@
 
 \RequirePackage{refstyle}
 \RequirePackage{lipsum} % Blindtext
-\RequirePackage{scrhack}
+\RequirePackage{scrhack} % Remove warning for deprecated features
 \RequirePackage{microtype}  % should remove badboxes, but not working
 \RequirePackage[hyphens]{url} % Links, break URLs e.g. in footnotes
 
@@ -208,15 +220,14 @@
 
 \RequirePackage[backend=biber,style=ieee,sorting=nyt,urldate=long,backref=true,giveninits=true]{biblatex}
 \addbibresource{./include/literature.bib}
-% \bibliography{literature}
 
 
 %-------------------------------------------
-%	Hyperlinks
+%	Hyperlinks and Bookmark
 %-------------------------------------------
 
 \RequirePackage[colorlinks]{hyperref}  % Load as last package if possible
-\hypersetup{linkcolor=color0,citecolor=color0,filecolor=black,urlcolor=color0}
+\hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
 \RequirePackage{bookmark}  % Needs to be loaded after Hyperref
 \bookmarksetup{
   % Have PDF TOC numbered and expanded by default
@@ -224,3 +235,4 @@
   open,
 }
 
+%-------------------------------------------

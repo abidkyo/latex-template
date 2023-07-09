@@ -4,11 +4,6 @@
 
 %------------------------------------------------
 
-% Footnote numbering
-\renewcommand{\thefootnote}{[\arabic{footnote}]}
-
-%------------------------------------------------
-
 %\includeonly{
 %  include/content,
 %  chapter/ch1,
@@ -23,7 +18,8 @@
 
 %------------------------------------------------
 \begin{document}
-  % lstlisting numbering; the counter is defined in document environment
+  % lstlisting numbering;
+  % the counter is defined in document environment, cannot be in preamble
   \numberwithin{lstlisting}{section}
 
   \pagenumbering{alph}
