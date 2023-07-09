@@ -48,7 +48,6 @@
 \RequirePackage[T1]{fontenc}  % 8-bit font (e.g for Umlaut)
 \RequirePackage[utf8]{inputenc}
 %\RequirePackage[applemac]{inputenc}  % For Apple User (instead of utf8)
-\RequirePackage{ifthen}  % Command
 
 \RequirePackage{csquotes}  % Quote symbol depends on babel language setting
 
@@ -133,12 +132,6 @@
 %	Packages
 %-----------------------------------------------
 
-\RequirePackage{gensymb}
-\RequirePackage{latexsym}
-\RequirePackage{textcomp} % For extra symbols
-\RequirePackage{upgreek}  % Upright Greek symbol in equation
-\RequirePackage[right]{eurosym}  % Eur symbol \EUR{number}, or Number \euro{}
-
 % Floats
 \RequirePackage{float}
 \RequirePackage{floatflt}
@@ -187,7 +180,6 @@
 %	Captions
 %-------------------------------------------
 
-\RequirePackage{ragged2e}
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 \captionsetup{format=hang,justification=raggedright}
@@ -204,14 +196,11 @@
 
 
 %-------------------------------------------
-%	Links, Blindtext, Layout Title Page
+%	Extras
 %-------------------------------------------
 
-\RequirePackage{refstyle}
 \RequirePackage{lipsum} % Blindtext
 \RequirePackage{scrhack} % Remove warning for deprecated features
-\RequirePackage{microtype}  % should remove badboxes, but not working
-\RequirePackage[hyphens]{url} % Links, break URLs e.g. in footnotes
 
 
 %-------------------------------------------
