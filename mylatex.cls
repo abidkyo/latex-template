@@ -146,6 +146,28 @@
 \definecolor{color2}{rgb}{0.45,0.45,0.45}  % Dark grey
 
 
+%-----------------------------------------------
+% Do not let floats pass section, subsection and subsubsection borders
+%-----------------------------------------------
+
+\RequirePackage[section]{placeins}
+\makeatletter
+\AtBeginDocument{%
+  \expandafter\renewcommand\expandafter\subsection\expandafter{%
+    \expandafter\@fb@secFB\subsection
+  }%
+}
+\makeatother
+%
+\makeatletter
+\AtBeginDocument{%
+  \expandafter\renewcommand\expandafter\subsubsection\expandafter{%
+    \expandafter\@fb@secFB\subsubsection
+  }%
+}
+\makeatother
+
+
 %----------------------------------------------------
 %	Chapter Number in Captions
 %----------------------------------------------------

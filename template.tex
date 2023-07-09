@@ -4,26 +4,6 @@
 
 %------------------------------------------------
 
-% Do not let floats pass section, subsection and subsubsection borders
-\usepackage[section]{placeins}
-\makeatletter
-\AtBeginDocument{%
-  \expandafter\renewcommand\expandafter\subsection\expandafter{%
-    \expandafter\@fb@secFB\subsection
-  }%
-}
-\makeatother
-%
-\makeatletter
-\AtBeginDocument{%
-  \expandafter\renewcommand\expandafter\subsubsection\expandafter{%
-    \expandafter\@fb@secFB\subsubsection
-  }%
-}
-\makeatother
-
-%------------------------------------------------
-
 % Footnote numbering
 \renewcommand{\thefootnote}{[\arabic{footnote}]}
 
