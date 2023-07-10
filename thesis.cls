@@ -1,7 +1,7 @@
 %----------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mylatex}[Custom Document Class]
+\ProvidesClass{thesis}[Custom Document Class]
 
 \LoadClass[a4paper,fontsize=12pt,oneside,openany,titlepage,numbers=noenddot,parskip=half,listof=totoc,bibliography=numbered]{scrbook}
 
